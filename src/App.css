@@ -1,0 +1,134 @@
+/* App Container */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: linear-gradient(to right, #e0c3fc, #c2e9fb);
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #3949ab;
+}
+
+.app-title {
+  font-size: 1.5rem;   /* Keep this the same */
+  color: #ffffff;      /* Keep this the same */
+  margin: 0;           /* Reset margin to avoid unexpected layout shifts */
+  padding-left: 20%;   /* Add padding to move it to the right without affecting layout */
+  font-weight: bold;   /* Keep this the same */
+}
+
+
+/* .app-title {
+  font-size: 1.8rem;
+  margin: 0;
+} */
+
+.search-bar-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-bar {
+  padding: 10px;
+  font-size: 16px;
+  width: 30%;
+  margin-right: 20%;
+  border: 2px solid #ddd;
+  border-radius: 20px; /* Round edges */
+  padding-right: 40px; /* Space for icon */
+  transition: border-color 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #ffffff;
+  outline: none;
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border-left-color: #3949ab;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Event List */
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Event Card */
+.event-card {
+  width: 220px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+
+.event-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.event-card h2 {
+  font-size: 1.2rem;
+  color: #3949ab;
+  margin: 10px 0 5px;
+}
+
+.event-card p {
+  font-size: 0.9rem;
+  /* color: #555555; */
+  margin: 5px 0;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .search-bar {
+    width: 80%;
+    margin-top: 10px;
+  }
+  .event-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-card {
+    width: 100%;
+  }
+}
